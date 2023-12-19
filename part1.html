@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>part 1</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <a href="part2.html">part 2</a>
+
+    on this page, you'll follow instructions to get your google takeout data, then get your
+    youtube API response.
+
+    note: this is very fuzzy. expect about 1% of your watch history to be ignored for some reason.
+
+    <input type="file" id="file_input" accept=".json" />
+
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script defer src="utils.js"></script>
+    <script defer src="part1.js"></script>
+
+
+    <br>
+
+    <ul>
+        <li>
+            <h2>Create a youtube API key</h2>
+            (TODO instructions)
+        </li>
+        <li>
+            <h2>Enter your youtube API key here</h2>
+            <br>
+            <label for="api_key_input">API Key:</label>
+            <input type="password" id="api_key_input"></input>
+            <br>
+        </li>
+        <li>
+            <h2>Click on "authenticate" and simply close the popup.</h2>
+            The popup will say
+            "authorization error" or something, but it'll work anyway.
+            <br>
+            <button id="authButton" onclick="authenticate().then(loadClient)">authenticate</button>
+            <p id="confirmation"></p>
+        </li>
+        <li>
+            <h2>Click on "execute"</h2>
+            <br>
+            <button id="executeButton" disabled onclick="execute()">execute</button>
+            <br>
+        </li>
+        <li>
+            <h2>Download results and move on to part 2</h2>
+            <br>
+            <button id="downloadButton" disabled onclick="downloadResults()">download results</button>
+            <br>
+        </li>
+    </ul>
+</body>
+
+</html>
